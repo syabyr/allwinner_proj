@@ -43,7 +43,7 @@ CONFIG_CMD_MTD=y
 CONFIG_MTDPARTS_DEFAULT="mtdparts=nand0:2m(nand.spl),2m(nand.spl_bak),2m(nand.uboot_env),2m(nand.uboot_bak),2m(nand.uboot),2m(nand.dtb),6m(nand.kernel),-(nand.rootfs)"
 CONFIG_ENV_IS_IN_NAND=y
 CONFIG_ENV_SIZE=0x200000
-CONFIG_ENV_OFFSET=0x200000
+CONFIG_ENV_OFFSET=0x400000
 CONFIG_CMD_UBI=y
 CONFIG_CMD_UBIFS=y
 CONFIG_MTD_UBI=y
