@@ -375,39 +375,61 @@
 			0x7c57 0x0fbe 0x46ce 0x4939 0x6b17 0x37bb 0x3e91 0x76db>;
 		onfi,nand-timing-mode = <0x1f>;
 		nand-on-flash-bbt;
-		boot0@0 {
-			label = "boot0";
-			reg = /bits/ 64 <0x0 0x200000>;
-			nand-ecc-mode = "hw_syndrome";
-			nand-rnd-mode = "hw";
-		};
+		spl@0 {
+                        label = "spl";
+                        reg = /bits/ 64 <0x0 0x200000>;
+                        nand-ecc-mode = "hw_syndrome";
+                        nand-rnd-mode = "hw";
+                };
 
-		boot0-rescue@200000 {
-			label = "boot0-rescue";
-			reg = /bits/ 64 <0x200000 0x200000>;
-			nand-ecc-mode = "hw_syndrome";
-			nand-rnd-mode = "hw";
-		};
+                spl_bak@200000 {
+                        label = "spl_bak";
+                        reg = /bits/ 64 <0x200000 0x200000>;
+                        nand-ecc-mode = "hw_syndrome";
+                        nand-rnd-mode = "hw";
+                };
 
-		uboot@400000 {
-			label = "uboot";
-			reg = /bits/ 64 <0x400000 0x200000>;
-			nand-ecc-mode = "hw";
-			nand-rnd-mode = "hw";
-		};
+                uboot_env@400000 {
+                        label = "uboot_env";
+                        reg = /bits/ 64 <0x400000 0x200000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
 
-		uboot-rescue@600000 {
-			label = "uboot-rescue";
-			reg = /bits/ 64 <0x600000 0x200000>;
-			nand-ecc-mode = "hw";
-			nand-rnd-mode = "hw";
-		};
+		uboot_bak@600000 {
+                        label = "uboot_bak";
+                        reg = /bits/ 64 <0x600000 0x200000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
 
-		rootfs@800000 {
-			label = "rootfs";
-			reg = /bits/ 64 <0x800000 0xff800000>;
-			nand-ecc-mode = "hw";
-			nand-rnd-mode = "hw";
-		};
+                uboot@800000 {
+                        label = "uboot";
+                        reg = /bits/ 64 <0x800000 0x200000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
+
+                dtb@a00000 {
+                        label = "dtb";
+                        reg = /bits/ 64 <0xa00000 0x200000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
+
+                kernel@c00000 {
+                        label = "kernel";
+                        reg = /bits/ 64 <0xc00000 0x600000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
+
+		rootfs@1200000 {
+                        label = "rootfs";
+                        reg = /bits/ 64 <0x1200000 0xff800000>;
+                        nand-ecc-mode = "hw";
+                        nand-rnd-mode = "hw";
+                };
+
 	};
 };
