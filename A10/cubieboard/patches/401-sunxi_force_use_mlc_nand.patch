@@ -1,0 +1,13 @@
+Index: linux-5.4.179/drivers/mtd/ubi/build.c
+===================================================================
+--- linux-5.4.179.orig/drivers/mtd/ubi/build.c
++++ linux-5.4.179/drivers/mtd/ubi/build.c
+@@ -850,7 +850,7 @@ int ubi_attach_mtd_dev(struct mtd_info *
+ 	if (mtd->type == MTD_MLCNANDFLASH) {
+ 		pr_err("ubi: refuse attaching mtd%d - MLC NAND is not supported\n",
+ 			mtd->index);
+-		return -EINVAL;
++		//return -EINVAL;
+ 	}
+ 
+ 	if (ubi_num == UBI_DEV_NUM_AUTO) {
